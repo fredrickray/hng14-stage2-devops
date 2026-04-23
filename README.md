@@ -17,7 +17,7 @@ Three services (frontend, API, worker) plus Redis process background jobs. This 
    cp .env.example .env
    ```
 
-   Edit `.env` and replace `__SET_A_STRONG_REDIS_PASSWORD__` with a long random value. Adjust CPU/memory limits or image tags if your machine is constrained.
+   Edit `.env` and replace `__SET_A_STRONG_REDIS_PASSWORD__` with a long random value. Adjust CPU/memory limits or image tags if your machine is constrained. By default, images are tagged `hng14-jobstack-*` so Compose does not try to pull reserved short names like `api` from Docker Hub before the first local build.
 
 3. **Build, start, and wait for health checks:**
 

@@ -27,7 +27,7 @@ services:
   api:
     build:
       context: ./api
-    image: ${DOCKER_IMAGE_PREFIX}api:${DOCKER_IMAGE_TAG}
+    image: ${DOCKER_IMAGE_PREFIX:-hng14-jobstack-}api:${DOCKER_IMAGE_TAG:-latest}
     container_name: ${API_CONTAINER_NAME}
     networks:
       - internal
@@ -55,7 +55,7 @@ services:
   worker:
     build:
       context: ./worker
-    image: ${DOCKER_IMAGE_PREFIX}worker:${DOCKER_IMAGE_TAG}
+    image: ${DOCKER_IMAGE_PREFIX:-hng14-jobstack-}worker:${DOCKER_IMAGE_TAG:-latest}
     container_name: ${WORKER_CONTAINER_NAME}
     networks:
       - internal
@@ -83,7 +83,7 @@ services:
   frontend:
     build:
       context: ./frontend
-    image: ${DOCKER_IMAGE_PREFIX}frontend:${DOCKER_IMAGE_TAG}
+    image: ${DOCKER_IMAGE_PREFIX:-hng14-jobstack-}frontend:${DOCKER_IMAGE_TAG:-latest}
     container_name: ${FRONTEND_CONTAINER_NAME}
     networks:
       - internal

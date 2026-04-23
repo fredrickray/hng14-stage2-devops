@@ -129,3 +129,11 @@ Each entry references the **starter** file and line numbers **before** this fork
 **Problem:** The repository did not explain how to run or grade the stack.
 
 **Change:** Replaced with full operator documentation (see current `README.md`).
+
+---
+
+## `docker-compose.yml` image names (operational noise after initial implementation)
+
+**Problem:** With an empty `DOCKER_IMAGE_PREFIX`, Compose referenced images `api`, `worker`, and `frontend`, which Docker Hub treats as pull targets before a local build and produced confusing **pull access denied** warnings.
+
+**Change:** Use interpolation defaults so local tags are **`hng14-jobstack-api`**, **`hng14-jobstack-worker`**, and **`hng14-jobstack-frontend`** unless `DOCKER_IMAGE_PREFIX` is set (CI sets `localhost:5000/`).
