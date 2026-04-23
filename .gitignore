@@ -1,0 +1,11 @@
+.env
+.env.local
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.sarif
+node_modules/
+.DS_Store
